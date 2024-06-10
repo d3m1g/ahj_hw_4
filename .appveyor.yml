@@ -12,9 +12,6 @@ install:
   # install modules
   - npm install
 
-# Don't actually build.
-build: off
-
 # Post-install test scripts.
 test_script:
   # Output useful info for debugging.
@@ -23,10 +20,3 @@ test_script:
   # run tests
   - npm test
   - npm run build   # команда сборки
-
-deploy_script:  # скрипт развёртывания
-  - git config --global credential.helper store
-  - git config --global user.name AppVeyor
-  - git config --global user.email ci@appveyor.com
-  - echo "https://$GITHUB_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
-  - npx push-dir --dir=dist --branch=gh-pages --force --verbose

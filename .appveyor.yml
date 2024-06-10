@@ -24,12 +24,7 @@ test_script:
   - npm test
   - npm run build   # команда сборки
 
-
-  branches:
-  only:
-    - master  # ветка git
-
-    deploy_script:  # скрипт развёртывания
+deploy_script:  # скрипт развёртывания
   - git config --global credential.helper store
   - git config --global user.name AppVeyor
   - git config --global user.email ci@appveyor.com

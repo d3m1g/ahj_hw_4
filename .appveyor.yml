@@ -1,27 +1,24 @@
-image: Ubuntu1804  # образ для сборки
+# Test against the latest version of this Node.js version
+image:
+  - Visual Studio 2022
 
-stack: node 20  # окружение
+environment:
+  nodejs_version: "20"
 
-branches:
-  only:
-    - master  # ветка git
-
-cache: node_modules  # кеширование
-
+# Install scripts. (runs after repo cloning)
 install:
-  - npm install  # команда установки зависимостей
+  # Get the latest stable version of Node.js
+  - ps: Install-Product node $env:nodejs_version
+  # install modules
+  - npm install
 
-build: off  # отключаем встроенную в appveyor систему сборки
-
-build_script:
-  - npm run build   # команда сборки
-
+# Post-install test scripts.
 test_script:
-  - npm run lint && npm test  # скрипт тестирования
+  # Output useful info for debugging.
+  - node --version
+  - npm --version
+  # run tests
+  - npm test
 
-deploy_script:  # скрипт развёртывания
-  - git config --global credential.helper store
-  - git config --global user.name AppVeyor
-  - git config --global user.email ci@appveyor.com
-  - echo "https://$GITHUB_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
-  - npx push-dir --dir=dist --branch=gh-pages --force --verbose
+# Don't actually build.
+build: off

@@ -1,0 +1,39 @@
+icon.ico
+  source: https://findicons.com/icon/416638/visa
+  Designer: Web Icon Set
+  License: Freeware
+
+visa.png
+  source: https://findicons.com/icon/223557/visa_curved
+  Designer: The Web Design Blog
+  License: Freeware
+
+mastercard.png
+  source: https://findicons.com/icon/223569/mastercard_curved
+  Designer: The Web Design Blog
+  License: Freeware
+
+americanexpress.png
+  source: https://findicons.com/icon/223574/american_express_curved
+  Designer: The Web Design Blog
+  License: Freeware
+
+discover.png
+  source: https://findicons.com/icon/223564/discover_curved
+  Designer: The Web Design Blog
+  License: Freeware
+
+jcb.png
+  source: https://findicons.com/icon/608564/jcb
+  Designer: Artem Ottoson
+  License: Freeware
+
+dinersclub.png
+  source: https://findicons.com/icon/608573/dinersclub
+  Designer: Artem Ottoson
+  License: Freeware
+
+mir.png
+  source: https://icons-for-free.com/flat+rounded+mir-1325051836935542896/
+  Author: Aaron Fagan
+  License: Apache-2.0 License (https://github.com/aaronfagan/svg-credit-card-payment-icons/blob/main/LICENSE)

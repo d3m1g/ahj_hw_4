@@ -1,8 +1,6 @@
-# Test against the latest version of this Node.js version
-image:
-  - Visual Studio 2022
+image: Ubuntu2004  # образ для сборки
 
-stack: node 20 # окружение
+stack: node 18  # окружение
 
 branches:
   only:

@@ -1,3 +1,4 @@
+/* eslint-disable eol-last */
 /* eslint-disable indent */
 /* eslint-disable eqeqeq */
 import getResultCheckCartNum from './getResultCheckCartNum';

@@ -1,3 +1,4 @@
+/* eslint-disable eol-last */
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 const dev = require('../webpack.dev');

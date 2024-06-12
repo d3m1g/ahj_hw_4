@@ -1,3 +1,4 @@
+/* eslint-disable eol-last */
 import CreditCardValidator from './CreditCardValidator';
 
 const parentEl = document.querySelector('body');

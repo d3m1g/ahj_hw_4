@@ -1,3 +1,4 @@
+/* eslint-disable eol-last */
 /* eslint-disable eqeqeq */
 /* eslint-disable no-return-assign */
 export default function getPaymentSystem(cardNumber) {

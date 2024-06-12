@@ -1,3 +1,4 @@
+/* eslint-disable eol-last */
 import { getResultCheckAlgorithmLuhn } from '../getResultCheckCartNum';
 
 test.each([

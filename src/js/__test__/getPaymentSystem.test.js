@@ -1,3 +1,4 @@
+/* eslint-disable eol-last */
 import getPaymentSystem from '../getPaymentSystem';
 
 test.each([

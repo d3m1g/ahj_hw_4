@@ -1,3 +1,4 @@
+/* eslint-disable eol-last */
 import puppeteer from 'puppeteer';
 import { fork } from 'child_process';
 

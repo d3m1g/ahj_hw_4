@@ -2,24 +2,28 @@
 image:
   - Visual Studio 2022
 
-environment:
-  nodejs_version: "20"
+stack: node 20 # окружение
 
-# Install scripts. (runs after repo cloning)
+branches:
+  only:
+    - master # ветка git
+
+cache: node_modules # кеширование
+
 install:
-  # Get the latest stable version of Node.js
-  - ps: Install-Product node $env:nodejs_version
-  # install modules
-  - npm install
+  - npm install # команда установки зависимостей
 
-# Post-install test scripts.
+build: off # отключает встроенную в appveyor систему сборки
+
+build_script:
+  - npm run build # команда сборки
+
 test_script:
-  # Output useful info for debugging.
-  - node --version
-  - npm --version
-  # run tests
-  - npm test
-  - npm run build   # команда сборки
+  - npm run lint && npm test # скрипт тестирования
 
-# Don't actually build.
-build: off
+deploy_script: # скрипт развёртывания
+  - git config --global credential.helper store
+  - git config --global user.name AppVeyor
+  - git config --global user.email ci@appveyor.com
+  - echo "https://$GITHUB_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
+  - npx push-dir --dir=dist --branch=gh-pages --force --verbose

@@ -1,3 +1,4 @@
+/* eslint-disable eol-last */
 /* eslint-disable no-param-reassign */
 /* eslint-disable eqeqeq */
 /* eslint-disable no-use-before-define */

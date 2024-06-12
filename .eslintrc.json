@@ -6,6 +6,14 @@
    "jest": true
  },
  "rules": {
+  "import/no-extraneous-dependencies":[
+         "error",
+         {
+            "devDependencies":[
+               "**/webpack.*.js"
+            ]
+         }
+      ],
    "no-restricted-syntax": [
      "error",
      "LabeledStatement",

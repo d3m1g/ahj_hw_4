@@ -23,9 +23,10 @@ environment:
   access_token:
     secure: VGm/RKhXQK4DhARxKPWEvtjDUTUIcxy/Or49R0/8a9x4O8T2xXAsHWt8LRkz3nBW
 
-deploy_script: # скрипт развёртывания
+on_success:
   - git config --global credential.helper store
-  - git config --global user.name AppVeyor
-  - git config --global user.email ci@appveyor.com
-  - echo "https://$GITHUB_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
-  - npx push-dir --dir=dist --branch=gh-pages --force --verbose
+  - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://$($env:access_token):x-oauth-basic@github.com`n" -NoNewline
+  - git config --global user.email "Your email"
+  - git config --global user.name "Your Name"
+  - git commit ...
+  - git push ...
